@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vanilla is a Joke</title>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <div class="iconBx active" data-id="content1">
+                <img src="img/img1.png" alt="">
+            </div>
+            <div class="iconBx" data-id="content2">
+                <img src="img/img2.png" alt="" >
+            </div>
+            <div class="iconBx" data-id="content3">
+                <img src="img/img3.png" alt="" >
+            </div>
+            <div class="iconBx" data-id="content4">
+                <img src="img/img4.png" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <div class="contentBx active" id="content1">
+                <div class="text">
+                    <h2>Google text</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam nihil totam nisi in tempora aliquam incidunt ducimus, minima laborum, asperiores laboriosam. Fugiat nulla, necessitatibus illo autem ipsam quae magnam suscipit?</p>
+                </div>
+            </div>
+            <div class="contentBx" id="content2">
+                <div class="text">
+                    <h2>Facebook text</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam nihil totam nisi in tempora aliquam incidunt ducimus, minima laborum, asperiores laboriosam. Fugiat nulla, necessitatibus illo autem ipsam quae magnam suscipit?</p>
+                </div>
+            </div>
+            <div class="contentBx" id="content3">
+                <div class="text">
+                    <h2>twitter text</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam nihil totam nisi in tempora aliquam incidunt ducimus, minima laborum, asperiores laboriosam. Fugiat nulla, necessitatibus illo autem ipsam quae magnam suscipit?</p>
+                </div>
+            </div>
+            <div class="contentBx" id="content4">
+                <div class="text">
+                    <h2>yahoo text</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam nihil totam nisi in tempora aliquam incidunt ducimus, minima laborum, asperiores laboriosam. Fugiat nulla, necessitatibus illo autem ipsam quae magnam suscipit?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var iconBx = document.querySelectorAll('.iconBx');
+        var contentBx = document.querySelectorAll('.contentBx');
+
+        for(var i=0; i<iconBx.length; i++){
+            iconBx[i].addEventListener('mouseover', function(){
+                for(var i=0; i<contentBx.length; i++){
+                    contentBx[i].className='contentBx';
+                }
+                document.getElementById(this.dataset.id).className = 'contentBx active';
+
+                for(var i=0; i<iconBx.length; i++){
+                    iconBx[i].className='iconBx';
+                }
+                this.className='iconBx active'; 
+            })
+        }
+    </script>
+</body>
+</html>
